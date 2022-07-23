@@ -25,7 +25,7 @@ function handleDeviceChange (e) {
     const color = PAGE.elementTCB.childNodes[0].childNodes[0].style.color
 
     PAGE.elementTCB.style.cssText = 'position: fixed;'
-    PAGE.elementTCB.style.cssText += `left: ${offsetX}px; top: ${offsetY}px;`
+    PAGE.elementTCB.style.cssText += `left: ${offsetX}px; top: ${offsetY}px; width: 240px;`
     PAGE.elementTCB.style.cssText += `border-left: medium solid ${color}; padding-left: 1rem;`
   } else {
     PAGE.elementTCB.style.cssText = ''
