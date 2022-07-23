@@ -1,0 +1,16 @@
+{
+  "name": "oopy-custom-code",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Chloekkk/oopy-custom-code.git",
+  "author": "Chloekkk <skdusdl8804@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-html": "^7.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0"
+  }
+}
