@@ -13,9 +13,13 @@ function debounce (func, delay) {
     timer = setTimeout(func, delay)
   }
 }
-function calTCBposition () {
+function getSidebarPosition () {
   const offsetX = Math.round((innerWidth - PAGE.elementTitle.offsetWidth) / 2) + PAGE.elementTitle.offsetWidth
   const offsetY = PAGE.elementCover.height + PAGE.headerHeight + PAGE.elementTitle.offsetHeight
+  return { offsetX, offsetY }
+}
+function handleSidebarChange () {
+  const { offsetX, offsetY } = getSidebarPosition()
   const color = PAGE.elementTCB.childNodes[0].childNodes[0].style.color
 
   if (offsetX - PAGE.elementTitle.offsetWidth > 150) {
@@ -33,6 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
   PAGE.elementCover = document.querySelector('img.page_cover')
   PAGE.tcbOriginStyle = document.querySelector('.notion-table_of_contents-block').style.cssText
 
-  if (PAGE.elementTCB) { calTCBposition() }
+  if (PAGE.elementTCB) { handleSidebarChange() }
 })
-window.addEventListener('resize', debounce(calTCBposition, 500))
+window.addEventListener('resize', debounce(handleSidebarChange, 500))
