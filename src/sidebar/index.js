@@ -35,4 +35,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (PAGE.elementTCB) { calTCBposition() }
 })
-window.addEventListener('resize', debounce(calTCBposition, 1000))
+window.addEventListener('resize', debounce(calTCBposition, 500))
