@@ -26,11 +26,10 @@ function getSidebarPosition() {
     Math.round((innerWidth - PAGE.elementTitle.offsetWidth) / 2) +
     PAGE.elementTitle.offsetWidth;
   const offsetY =
-    PAGE.elementCover.height + PAGE.headerHeight + PAGE.elementTitle.offsetHeight;
+    (PAGE.elementCover?.height ?? 0) + PAGE.headerHeight + PAGE.elementTitle.offsetHeight;
   return { offsetX, offsetY };
 }
 function handleSidebarResponsiveChange() {
-  console.log('resize');
   const { offsetX, offsetY } = getSidebarPosition();
   const color = PAGE.elementTCB.childNodes[0].childNodes[0]?.style?.color;
 
