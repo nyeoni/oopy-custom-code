@@ -9,3 +9,5 @@
  * -----
  * Copyright (c) 2022 Chloekkk
  */
+
+export default function hideCoverImg() {}

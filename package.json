@@ -6,6 +6,7 @@
   "author": "Chloekkk <skdusdl8804@gmail.com>",
   "license": "MIT",
   "scripts": {
+	"rm": "rm -rf dist/",
     "build": "esbuild `find ./src -name 'index.mjs'` --bundle --minify --sourcemap --outdir=dist",
     "test": "esbuild src/index.mjs --bundle --outfile=dist/test.js && open index.html"
   },

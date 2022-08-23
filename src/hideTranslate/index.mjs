@@ -10,7 +10,7 @@
  * Copyright (c) 2022 Chloekkk
  */
 
-export default function hiddenTranslate() {
+export default function hideTranslate() {
   const notionTranslate = document.querySelector('div.notion-topbar');
   console.log('fuck', notionTranslate);
   if (notionTranslate) {
@@ -19,4 +19,4 @@ export default function hiddenTranslate() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', hiddenTranslate);
+document.addEventListener('DOMContentLoaded', hideTranslate);
