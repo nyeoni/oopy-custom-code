@@ -16,18 +16,16 @@
     elementTitle: {},
     elementTCB: {},
     elementCover: {},
-    elementScroller: {},
     tcbOriginStyle: "",
     timer: () => {
     }
   };
   function getSidebarPosition() {
     const offsetX = Math.round((innerWidth - PAGE.elementTitle.offsetWidth) / 2) + PAGE.elementTitle.offsetWidth;
-    const offsetY = PAGE.elementCover.height + PAGE.headerHeight + PAGE.elementTitle.offsetHeight;
+    const offsetY = (PAGE.elementCover?.height ?? 0) + PAGE.headerHeight + PAGE.elementTitle.offsetHeight;
     return { offsetX, offsetY };
   }
   function handleSidebarResponsiveChange() {
-    console.log("resize");
     const { offsetX, offsetY } = getSidebarPosition();
     const color = PAGE.elementTCB.childNodes[0].childNodes[0]?.style?.color;
     if (offsetX - PAGE.elementTitle.offsetWidth > 150) {
@@ -42,11 +40,8 @@
     }
   }
   function handleSidebarScrollChange() {
-    console.log("scroll");
     if (!PAGE.active)
       return;
-    console.log("offsetY", PAGE.elementTCB.offsetTop);
-    console.log("scrollY", window.scrollY);
     if (PAGE.elementTCB.offsetTop + 128 <= window.scrollY) {
       PAGE.elementTCB.style.cssText += "position: fixed; top: 128px;";
     } else {
@@ -60,9 +55,6 @@
       "notion-table_of_contents-block"
     )[0];
     PAGE.elementCover = document.querySelector("img.page_cover");
-    PAGE.elementScroller = document.querySelector(".notion-scroller");
-    console.log("wtf");
-    console.log("wtf", PAGE.elementScroller);
     PAGE.tcbOriginStyle = document.querySelector(
       ".notion-table_of_contents-block"
     ).style.cssText;
@@ -72,15 +64,29 @@
     window.addEventListener("resize", debounce(handleSidebarResponsiveChange, 200));
     window.addEventListener("scroll", handleSidebarScrollChange);
   }
+  document.addEventListener("DOMContentLoaded", sidebar);
+
+  // src/hiddenTranslate/index.mjs
+  function hiddenTranslate() {
+    const notionTranslate = document.querySelector("div.css-cmzctn");
+    console.log("fuck", notionTranslate);
+    if (notionTranslate) {
+      notionTranslate.style.display = "none";
+    }
+  }
+  document.addEventListener("DOMContentLoaded", hiddenTranslate);
 
   // src/index.mjs
   var Config = {
-    _sidebar: window.sidebar ?? true
+    _sidebar: window.sidebar ?? false,
+    _hiddenTranslate: window.hiddenTranslate ?? true
   };
   document.addEventListener("DOMContentLoaded", function() {
-    console.log("fuckyou");
     if (Config._sidebar) {
       sidebar();
+    }
+    if (Config._hiddenTranslate) {
+      hiddenTranslate();
     }
   });
 })();

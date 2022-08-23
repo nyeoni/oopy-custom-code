@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/hiddenTranslate/index.mjs"],
+  "sourcesContent": ["/*\n * File: index.mjs\n * Project: oopy-custom-code\n * Created Date: 2022-07-24 04:53\n * Author: hostname (skdusdl8804@gmail.com)\n * -----\n * Last Modified: 2022-08-08 04:26\n * Modified By: Chloekkk\n * -----\n * Copyright (c) 2022 Chloekkk\n */\n\nexport default function hiddenTranslate() {\n  const notionTranslate = document.querySelector('div.notion-topbar');\n  console.log('fuck', notionTranslate);\n  if (notionTranslate) {\n    console.log('sibal', notionTranslate.nextSibling.nextSibling);\n    notionTranslate.nextSibling.nextSibling.style.display = 'none';\n  }\n}\n\ndocument.addEventListener('DOMContentLoaded', hiddenTranslate);\n"],
+  "mappings": "MAYe,SAARA,GAAmC,CACxC,IAAMC,EAAkB,SAAS,cAAc,mBAAmB,EAClE,QAAQ,IAAI,OAAQA,CAAe,EAC/BA,IACF,QAAQ,IAAI,QAASA,EAAgB,YAAY,WAAW,EAC5DA,EAAgB,YAAY,YAAY,MAAM,QAAU,OAE5D,CAEA,SAAS,iBAAiB,mBAAoBD,CAAe",
+  "names": ["hiddenTranslate", "notionTranslate"]
+}

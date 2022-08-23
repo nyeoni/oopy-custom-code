@@ -11,13 +11,18 @@
  */
 
 import sidebar from './sidebar/index.mjs';
+import ht from './hiddenTranslate/index.mjs';
 
 const Config = {
   _sidebar: window.sidebar ?? false,
+  _hiddenTranslate: window.hiddenTranslate ?? true,
 };
 
 document.addEventListener('DOMContentLoaded', function () {
   if (Config._sidebar) {
     sidebar();
+  }
+  if (Config._hiddenTranslate) {
+    ht();
   }
 });
