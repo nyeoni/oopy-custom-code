@@ -2,7 +2,7 @@
  * File: index.mjs
  * Project: oopy-custom-code
  * Created Date: 2022-07-26 03:44
- * Author: hostname (skdusdl8804@gmail.com)
+ * Author: Chloekkk (skdusdl8804@gmail.com)
  * -----
  * Last Modified: 2022-08-03 04:49
  * Modified By: Chloekkk
@@ -26,7 +26,9 @@ function getSidebarPosition() {
     Math.round((innerWidth - PAGE.elementTitle.offsetWidth) / 2) +
     PAGE.elementTitle.offsetWidth;
   const offsetY =
-    (PAGE.elementCover?.height ?? 0) + PAGE.headerHeight + PAGE.elementTitle.offsetHeight;
+    (PAGE.elementCover?.height ?? 0) +
+    PAGE.headerHeight +
+    PAGE.elementTitle.offsetHeight;
   return { offsetX, offsetY };
 }
 function handleSidebarResponsiveChange() {
