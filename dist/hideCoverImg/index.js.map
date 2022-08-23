@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/hideCoverImg/index.mjs"],
+  "sourcesContent": ["/*\n * File: index.mjs\n * Project: oopy-custom-code\n * Created Date: 2022-08-23 04:01\n * Author: Chloekkk (skdusdl8804@gmail.com)\n * -----\n * Last Modified: 2022-08-23 04:01\n * Modified By: Chloekkk\n * -----\n * Copyright (c) 2022 Chloekkk\n */\n\nexport default function hideCoverImg() {}\n"],
+  "mappings": "MAYe,SAARA,GAAgC,CAAC",
+  "names": ["hideCoverImg"]
+}

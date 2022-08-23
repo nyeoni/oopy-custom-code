@@ -11,7 +11,7 @@
  */
 
 import sidebar from './sidebar/index.mjs';
-import ht from './hiddenTranslate/index.mjs';
+import ht from './hideTranslate/index.mjs';
 
 const Config = {
   _sidebar: window.sidebar ?? false,
